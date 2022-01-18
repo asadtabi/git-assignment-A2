@@ -1,0 +1,131 @@
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 p-0">
+      <!-- START SIDEBAR MENU -->
+      <nav class="page-sidebar">
+        <!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
+        <div class="sidebar-overlay-slide from-top" id="appMenu">
+          <div class="row">
+            <div class="col-xs-6 no-padding">
+              <a href="javascript:void(0)" class="p-l-40"><img src="assets/img/demo/social_app.svg" alt="socail" />
+              </a>
+            </div>
+            <div class="col-xs-6 no-padding">
+              <a href="javascript:void(0)" class="p-l-10"><img src="assets/img/demo/email_app.svg" alt="socail" />
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 m-t-20 no-padding">
+              <a href="javascript:void(0)" class="p-l-40"><img src="assets/img/demo/calendar_app.svg" alt="socail" />
+              </a>
+            </div>
+            <div class="col-xs-6 m-t-20 no-padding">
+              <a href="javascript:void(0)" class="p-l-10"><img src="assets/img/demo/add_more.svg" alt="socail" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- END SIDEBAR MENU TOP TRAY CONTENT-->
+        <!-- BEGIN SIDEBAR MENU HEADER-->
+        <!-- <div class="sidebar-header">
+          <img src="assets/img/logo_white.png" alt="logo" class="brand" data-src="assets/img/logo_white.png"
+            data-src-retina="assets/img/logo_white_2x.png" width="78" height="22" />
+          <div class="sidebar-header-controls">
+            <button aria-label="Toggle Drawer" type="button" class="
+                btn btn-icon-link
+                invert
+                sidebar-slide-toggle
+                m-l-20 m-r-10
+              " data-pages-toggle="#appMenu">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <button aria-label="Pin Menu" type="button" class="
+                btn btn-icon-link
+                invert
+                d-lg-inline-block
+                d-xlg-inline-block
+                d-md-inline-block
+                d-sm-none
+                d-none
+              " data-toggle-pin="sidebar">
+              <i class="pg-icon"></i>
+            </button>
+          </div>
+        </div> -->
+        <!-- END SIDEBAR MENU HEADER-->
+        <!-- START SIDEBAR MENU -->
+        <div class="sidebar-menu">
+          <!-- BEGIN SIDEBAR MENU ITEMS-->
+          <div class="scroll-wrapper menu-items" style="position: relative">
+            <ul class="menu-items scroll-content scroll-scrolly_visible" style="
+                height: auto;
+                margin-bottom: 0px;
+                margin-right: 0px;
+                max-height: 270px; /* background: black; */
+              ">
+              <li class="m-t-20">
+                <a href="javascript:void(0)" *ngIf="user?.role === 2" routerLink="/" class="detailed">
+                  <span class="title">Dashboard</span>
+                  <i class="fas fa-columns ml-4"></i>
+
+                </a>
+                <a href="javascript:void(0)" *ngIf="user?.role === 1" routerLink="/dashboard" class="detailed">
+                  <span class="title">Dashboard</span>
+                  <i class="fas fa-columns ml-4"></i>
+                </a>
+                <span class=""><i class="fas fa-dashboard"></i></span>
+              </li>
+              <li class="m-t-20">
+                <a href="javascript:void(0)" routerLink="/social" class="detailed">
+                  <span class="title">Social</span>
+                  <i class="fas fa-male ml-4"></i>
+                  <span class="details"></span>
+                </a>
+                <span class="icon-thumbnail"><i class=""></i></span>
+              </li>
+              <li class="m-t-20">
+                <a *ngIf="user?.role === 1" [routerLink]="['/dashboard/list']"
+                >
+                <span class="title">locked</span>
+                
+                <i class="fas fa-user-lock ml-4"></i
+              ></a>
+                <span class="icon-thumbnail"><i class=""></i></span>
+              </li>
+              <li class="m-t-20">
+                <a *ngIf="user?.role === 1" [routerLink]="['/dashboard/users']">
+                  <span class="title">List</span>
+                  
+                  <i class="fas fa-user ml-4"></i
+              ></a>
+                <span class="icon-thumbnail"><i class=""></i></span>
+              </li>
+            </ul>
+            <div class="scroll-element scroll-x scroll-scrolly_visible">
+              <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar" style="width: 89px"></div>
+              </div>
+            </div>
+            <div class="scroll-element scroll-y scroll-scrolly_visible">
+              <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar" style="height: 82px; top: 0px"></div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <!-- END SIDEBAR MENU -->
+      </nav>
+      <!-- END SIDEBAR MENU -->
+    </div>
+    <div class="col-md-10 px-0">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
